@@ -4,7 +4,8 @@
     <input
       type="text"
       name="name"
-      placeholder="Su nombre">
+      placeholder="Su nombre"
+      [ngModel]="user.name">
   </label>
   <div>
     <label>
@@ -12,14 +13,16 @@
       <input
         type="email"
         name="email"
-        placeholder="Su correo electronico">
+        placeholder="Su correo electronico"
+        [ngModel]="user.account.email">
     </label>
     <label>
       <span>Confirmar Correo</span>
       <input
         type="email"
         name="confirm"
-        placeholder="Confirmar correo electronico">
+        placeholder="Confirmar correo electronico"
+        [ngModel]="user.account.confirm">
     </label>
   </div>
   <button type="submit">Registrar</button>
@@ -27,5 +30,5 @@
 
 <pre>
   <b>Debug:</b>
-{{ f.value | json }} 
+{{ user | json }} 
 </pre>

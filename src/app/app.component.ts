@@ -8,10 +8,10 @@ import { Usuario } from './usuario';
 })
 export class AppComponent {
   user:Usuario ={
-    name: '',
+    name: 'Carlos Rojas',
     account: {
-      email: '',
-      confirm: ''
+      email: 'hi@carlosrojasblog.com',
+      confirm: 'hi@carlosrojasblog.com'
     }
   };
 }
