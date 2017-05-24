@@ -1,3 +1,26 @@
-<h1>
-  {{title}}
-</h1>
+<form novalidate>
+  <label>
+    <span>Nombre Completo</span>
+    <input
+      type="text"
+      name="name"
+      placeholder="Su nombre">
+  </label>
+  <div>
+    <label>
+      <span>Correo Electronico</span>
+      <input
+        type="email"
+        name="email"
+        placeholder="Su correo electronico">
+    </label>
+    <label>
+      <span>Confirmar Correo</span>
+      <input
+        type="email"
+        name="confirm"
+        placeholder="Confirmar correo electronico">
+    </label>
+  </div>
+  <button type="submit">Registrar</button>
+</form>
