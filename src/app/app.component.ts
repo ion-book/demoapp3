@@ -8,10 +8,14 @@ import { Usuario } from './usuario';
 })
 export class AppComponent {
   user:Usuario ={
-    name: 'Carlos Rojas',
+    name: '',
     account: {
-      email: 'hi@carlosrojasblog.com',
-      confirm: 'hi@carlosrojasblog.com'
+      email: '',
+      confirm: ''
     }
   };
+
+  onSubmit({ value, valid }: { value: Usuario, valid: boolean }) {
+    console.log(value, valid);
+  }
 }
