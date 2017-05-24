@@ -5,8 +5,18 @@
       type="text"
       name="name"
       placeholder="Su nombre"
-      [(ngModel)]="user.name">
+      ngModel
+      #userName="ngModel"
+      minlength="2"
+      required>
   </label>
+  <!-- name -->
+  <div *ngIf="userName.errors?.required && userName.touched" class="error">
+    Nombre es Requerido.
+  </div>
+  <div *ngIf="userName.errors?.minlength && userName.touched" class="error">
+    Minimo 2 Caracteres.
+  </div>
   <div ngModelGroup="account">
     <label>
       <span>Correo Electronico</span>
@@ -14,21 +24,27 @@
         type="email"
         name="email"
         placeholder="Su correo electronico"
-        [(ngModel)]="email">
+        ngModel
+         #userEmail="ngModel"
+        required>
     </label>
+    <!-- account: { email, confirm } -->
+    <div *ngIf="userEmail.errors?.required && userEmail.touched" class="error">
+      Email es requerido
+    </div>
     <label>
       <span>Confirmar Correo</span>
       <input
         type="email"
         name="confirm"
         placeholder="Confirmar correo electronico"
-        [(ngModel)]="confirm">
+        ngModel
+        #userConfirm="ngModel"
+        required>
     </label>
+    <div *ngIf="userConfirm.errors?.required && userConfirm.touched" class="error">
+     Email de Confirmación es requerido.
+    </div>
   </div>
-  <button type="submit">Registrar</button>
+  <button [disabled]="f.invalid" type="submit">Registrar</button>
 </form>
-
-<pre>
-  <b>Debug:</b>
-{{ user | json }} 
-</pre>
